@@ -24,7 +24,6 @@ class OrdersRepository implements IOrdersRepository {
 
   public async findById(id: string): Promise<Order | undefined> {
     const order = this.ormRepository.findOne(id, {
-      // ToDo - fazer com Eager Loading
       relations: ['order_products', 'customer'],
     });
 
